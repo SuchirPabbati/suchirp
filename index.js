@@ -120,7 +120,7 @@ function changeTextTwo() {
         var element = document.getElementById("text-element");
         element.classList.add("animate__animated", "animate__bounceOut");
         setTimeout(function () {
-            element.innerHTML = "As a college student using the well-known university website Canvas, I noticed several accessibility and usability issues. To address these concerns for myself and fellow students, I initiated a personal project called CanvasCraft. I've already introduced useful features, such as Dark Mode, a Custom Online File Viewer, and a Google OAuth 2.0 integration with the Google Calendar API for importing Canvas assignments. Looking ahead, I intend to enhance Canvas notifications by implementing Firebase Cloud Messaging, ensuring I never miss another assignment😅."
+            element.innerHTML = "As a college student using the well-known university website Canvas, I noticed several accessibility and usability issues. To address these concerns for myself and fellow students, I initiated a personal project called CanvasCraft. I've already introduced useful features, such as Dark Mode, a Custom Online File Viewer, and a Google OAuth 2.0 integration with the Google Calendar API for importing Canvas assignments. Looking ahead, I intend to enhance Canvas notifications by implementing Firebase Cloud Messaging, ensuring I never miss another assignment."
             element.classList.remove("animate__animated", "animate__bounceOut");
             element.classList.add("animate__animated", "animate__bounceIn");
         }, 1000);

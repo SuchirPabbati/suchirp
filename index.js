@@ -120,14 +120,14 @@ function changeTextTwo() {
         var element = document.getElementById("text-element");
         element.classList.add("animate__animated", "animate__bounceOut");
         setTimeout(function () {
-            element.innerHTML = "As a co-founder of A.P.T. (Anemia Prevention Technologies), I created the organization and developed a mobile application that uses machine learning and recommendation systems to aid mothers during their pregnancy. The app, available at www.aptnextgen.com, utilizes a fingernail scanner to detect the severity of nutrient deficiencies and provides personalized dietary and lifestyle recommendations to improve the user's health. Progress can be tracked through repeated scans, and the app will notify the user to seek medical intervention if the condition becomes severe."
+            element.innerHTML = "As a college student using the well-known university website Canvas, I noticed several accessibility and usability issues. To address these concerns for myself and fellow students, I initiated a personal project called CanvasCraft. I've already introduced useful features, such as Dark Mode, a Custom Online File Viewer, and a Google OAuth 2.0 integration with the Google Calendar API for importing Canvas assignments. Looking ahead, I intend to enhance Canvas notifications by implementing Firebase Cloud Messaging, ensuring I never miss another assignment😅."
             element.classList.remove("animate__animated", "animate__bounceOut");
             element.classList.add("animate__animated", "animate__bounceIn");
         }, 1000);
         var elementz = document.getElementById("title-element");
         elementz.classList.add("animate__animated", "animate__bounceOut");
         setTimeout(function () {
-            elementz.innerHTML = "Anemia Prevention Technologies";
+            elementz.innerHTML = "CanvasCraft";
             elementz.classList.remove("animate__animated", "animate__bounceOut");
             elementz.classList.add("animate__animated", "animate__bounceIn");
         }, 1000);
@@ -148,12 +148,12 @@ function changeTextTwo() {
 
         var icon4 = document.getElementById("icon4");
         setTimeout(function () {
-            icon4.innerHTML = "<i class='fas fa-circle'></i>" + " Flutter";
+            icon4.innerHTML = "<i class='fas fa-circle'></i>" + " Python";
         }, 1000);
 
         var icon5 = document.getElementById("icon5");
         setTimeout(function () {
-            icon5.innerHTML = "<i class='fas fa-circle'></i>" + " Python";
+            icon5.innerHTML = "<i class='fas fa-circle'></i>" + " Google Cloud";
         }, 1000);
         ifButtonClickedTwo = true;
         buttonClicked = false;

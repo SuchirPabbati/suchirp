@@ -99,6 +99,7 @@ function changeText() {
         }, 1000);
         buttonClicked = true;
         ifButtonClickedTwo = false;
+        ifButtonClickedThree = false;
 
         //change the background color of the button to white and the text color to color:rgb(255, 50, 50); and set padding padding:8px 40px;
         button.style.backgroundColor = "white";
@@ -106,6 +107,8 @@ function changeText() {
         //change the backgroiund color of the Apt button to  background:transparent; and white text color
         buttonAPT.style.backgroundColor = "transparent";
         buttonAPT.style.color = "white";
+        buttonthree.style.backgroundColor = "transparent";
+        buttonthree.style.color = "white";
 
 
 
@@ -157,16 +160,85 @@ function changeTextTwo() {
         }, 1000);
         ifButtonClickedTwo = true;
         buttonClicked = false;
+        ifButtonClickedThree = false;
         buttonAPT.style.backgroundColor = "white";
         buttonAPT.style.color = "rgb(255, 50, 50)";
         //change the backgroiund color of the Apt button to  background:transparent; and white text color
         button.style.backgroundColor = "transparent";
+        buttonthree.style.backgroundColor = "transparent";
+        buttonthree.style.color = "white";
         button.style.color = "white";
 
 
 
     }
 }
+
+var buttonthree = document.getElementById("ScarletRider");
+var ifButtonClickedThree = true;
+buttonthree.addEventListener("click", changeTextThree);
+function changeTextThree() {
+    if (!ifButtonClickedThree) {
+        var element = document.getElementById("text-element");
+        element.classList.add("animate__animated", "animate__bounceOut");
+        setTimeout(function () {
+            element.innerHTML = "Recognizing the inefficiency of the existing Rutgers app for bus information, I sought a more convenient solution and decided to experiment with new technology by creating an Alexa skill. Built using the Alexa Developer Console, the skill currently retrieves bus ETA times from a custom API developed by Piemadd, with plans to implement additional features. Furthermore, I am working towards integrating AWS serverless architecture to enhance scalability and potentially extend the skill's use to multiple college campuses."
+            element.classList.remove("animate__animated", "animate__bounceOut");
+            element.classList.add("animate__animated", "animate__bounceIn");
+        }, 1000);
+        var elementz = document.getElementById("title-element");
+        elementz.classList.add("animate__animated", "animate__bounceOut");
+        setTimeout(function () {
+            elementz.innerHTML = "ScarletRider";
+            elementz.classList.remove("animate__animated", "animate__bounceOut");
+            elementz.classList.add("animate__animated", "animate__bounceIn");
+        }, 1000);
+
+        var icon1 = document.getElementById("icon1");
+        setTimeout(function () {
+            icon1.innerHTML = "<i class='fas fa-circle'></i>" + "Javacscript";
+        }, 1000);
+        var icon2 = document.getElementById("icon2");
+        setTimeout(function () {
+            icon2.innerHTML = "<i class='fas fa-circle'></i>" + " AWS";
+        }, 1000);
+        var icon3 = document.getElementById("icon3");
+
+        setTimeout(function () {
+            icon3.innerHTML = "<i class='fas fa-circle'></i>" + " Alexa Developer Console";
+        }, 1000);
+
+        //hide other two icons so they dont show up
+        var icon4 = document.getElementById("icon4");
+        setTimeout(function () {
+            icon4.innerHTML = "<i class='fas fa-circle'></i>" + " RESTful API";
+        }, 1000);
+
+        var icon5 = document.getElementById("icon5");
+        setTimeout(function () {
+            icon5.innerHTML = "<i class='fas fa-circle'></i>" + " Python";
+        }, 1000);
+
+
+
+
+        ifButtonClickedThree = true;
+        buttonClicked = false;
+        ifButtonClickedTwo = false;
+        buttonthree.style.backgroundColor = "white";
+        buttonthree.style.color = "rgb(255, 50, 50)";
+
+        button.style.backgroundColor = "transparent";
+        button.style.color = "white";
+        buttonAPT.style.backgroundColor = "transparent";
+        buttonAPT.style.color = "white";
+
+
+
+    }
+}
+
+
 setTimeout(function () {
     $("#loading").addClass("animated fadeOut");
     setTimeout(function () {

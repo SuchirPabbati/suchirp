@@ -12,6 +12,21 @@ function closeabout() {
         $("#about_container").css("display", "none");
     }, 800);
 }
+function showexperience() {
+    $("#experience_container").css("display", "inherit");
+    $("#experience_container").addClass("animated slideInDown");
+    setTimeout(function () {
+        $("#experience_container").removeClass("animated slideInDown");
+    }, 800);
+}
+function closeexperience() {
+    $("#experience_container").addClass("animated slideOutUp");
+    setTimeout(function () {
+        $("#experience_container").removeClass("animated slideOutUp");
+        $("#experience_container").css("display", "none");
+    }, 800);
+}
+
 function showwork() {
     $("#work_container").css("display", "inherit");
     $("#work_container").addClass("animated slideInRight");

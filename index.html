@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Suchir Pabbati</title>
     <!-- create meta description-->
-    <meta name="description" content="Suchir Pabbati is a software developer and student studying Computer Science at Rutgers.">
+    <meta name="description"
+        content="Suchir Pabbati is a software developer and student studying Computer Science at Rutgers.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
+
 <body>
     <div id="loading">
         <div id="spinner"></div>
     </div>
-    
+
     <div id="particles-js"></div>
     <div id="box">
         <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
@@ -33,34 +35,46 @@
         <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
     </div>
     <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
-    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">work</a>
+    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">projects</a>
     <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
+    <a id="experience" onclick="showexperience()" class="animated fadeIn" style="animation-delay:2.6s;">experience</a>
     <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
         <h1>suchir pabbati.</h1>
         <h2>Software Developer / Student / Problem Solver</h2>
         <div id="menu">
             <a onclick="showabout()">about</a>
-            <a onclick="showwork()">work</a>
+            <a onclick="showabout()">experience</a>
+            <a onclick="showwork()">projects</a>
             <a onclick="showcontact()">contact</a>
         </div>
         <table>
-                <tr>
-                    <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social" href="https://github.com/SuchirPabbati" target="_blank"><i class="fab fa-github"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social" href="https://linkedin.com/in/suchir-pabbati" target="_blank"><i class="fab fa-linkedin"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social" href="https://www.instagram.com/suchir_p_/" target="_blank"><i class="fab fa-instagram"></i></a></td>
-                    <td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://drive.google.com/file/d/1ATdjNQQcE3QGlvA5KXko62IHM-XePiIP/view?usp=sharing" target="_blank"><img src="resume.png" alt="Resume Icon"></a></td>
-                    <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="blog.html" target="_self"><i class="fab fa-medium"></i></a></td>
-                    
-                </tr>
+            <tr>
+                <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social"
+                        href="https://github.com/SuchirPabbati" target="_blank"><i class="fab fa-github"></i></a></td>
+                <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social"
+                        href="https://linkedin.com/in/suchir-pabbati" target="_blank"><i
+                            class="fab fa-linkedin"></i></a></td>
+                <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social"
+                        href="https://www.instagram.com/suchir_p_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </td>
+                <!--<td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://drive.google.com/file/d/1ATdjNQQcE3QGlvA5KXko62IHM-XePiIP/view?usp=sharing" target="_blank"><img src="resume.png" alt="Resume Icon"></a></td>-->
+                <!--<td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="blog.html" target="_self"><i class="fab fa-medium"></i></a></td>-->
+
+            </tr>
         </table>
     </div>
     <div id="work_container" class="container">
         <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
-        <h1>works.</h1>
+        <h1>projects.</h1>
         <section>
             <h2 id="title-element">CanvasCraft</h2>
             <p id="text-element">
-                As a college student using the well-known university website Canvas, I noticed several accessibility and usability issues. To address these concerns for myself and fellow students, I initiated a personal project called CanvasCraft. I've already introduced useful features, such as Dark Mode, a Custom Online File Viewer, and a Google OAuth 2.0 integration with the Google Calendar API for importing Canvas assignments. Looking ahead, I intend to enhance Canvas notifications by implementing Firebase Cloud Messaging, ensuring I never miss another assignment.
+                As a college student using the well-known university website Canvas, I noticed several accessibility and
+                usability issues. To address these concerns for myself and fellow students, I initiated a personal
+                project called CanvasCraft. I've already introduced useful features, such as Dark Mode, a Custom Online
+                File Viewer, and a Google OAuth 2.0 integration with the Google Calendar API for importing Canvas
+                assignments. Looking ahead, I intend to enhance Canvas notifications by implementing Firebase Cloud
+                Messaging, ensuring I never miss another assignment.
             </p>
             <div id="used">
                 <div id="icon1"><i class="fas fa-circle"></i>&nbsp;HTML5</div>
@@ -75,41 +89,73 @@
         </section>
     </div>
     <div id="about_container" class="container">
-            <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
-            <h1>about.</h1>
-            <section>
-                <h2>about me</h2>
-                <p>
-                    I'm Suchir Pabbati, a Freshman at Rutgers University New Brunswick. As a Computer Science student, I spend most of my free time learning or improving new skills through projects. I like learning new languages and frameworks as each one of them implements a different approach to solving a common problem.
-              </p>
-                <p>
-                    In addition to what I mentioned above, in my spare time, I participate in basketball, running, solving escape rooms and chess puzzles, volunteering at a local temple, and love to cook.                  
-                </p>
-            </section>
-            <section>
-                <h2>skills</h2>
-                <p>
-                    Java, Javascript, Python, HTML5, CSS3, C#, Git, Firebase, Photoshop, and Unity.
-                </p>
-            </section>
-        </div>
-          <div id="contact_container" class="container">
-            <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
-            <h1>contact.</h1>
-            <section>
-                <h2>contact me</h2>
-                <p>
-                    <form>
-                        <input type="text" placeholder="name" required id="name">
-                        <input type="email" placeholder="email"  required id="email"><br>
-                        <textarea placeholder="your message" required rows="5" id="message"></textarea><br>
-                        <button class="btn_one" id="sendEmail">send</button>
-                    </form> 
-                    
-                </p>
-            </section>
-        </div>
-        
+        <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
+        <h1>about.</h1>
+        <section>
+            <h2>about me</h2>
+            <p>
+                I'm Suchir Pabbati, a sophmore at Rutgers University New Brunswick. As a Computer Science student, I
+                spend most of my free time learning or trying to solve problems through projects. I like learning new
+                languages and technologies as each one of them implements a different approach to solving a common
+                problem.
+            </p>
+            <p>
+                In addition to what I mentioned above, in my spare time, I love playing basketball, running, solving
+                escape rooms and chess puzzles, hanging out with friends, and cooking.
+            </p>
+        </section>
+        <section>
+            
+        </section>
+    </div>
+
+    <div id="experience_container" class="container">
+        <div onclick="closeexperience()"><i class="fas fa-angle-up"></i></div>
+        <h1>experience.</h1>
+        <section>
+            <h2>Software Developer Intern</h2>
+            <h3>Metaloga
+            </h3>
+            <h3><i>June 2024 - Aug. 2024</i></h3>
+
+            <p>
+                Worked on healthcare solutions using VR/AR/XR technologies. 
+            </p>
+            <p>
+                Developed an end-to-end solution for full body tracking for Meta Quest 3 using Pose Estimation.                
+            </p>
+        </section>
+        <section>
+            <h2>technologies I used</h2>
+            <p>
+                C#, Python, Javascript, PyTorch, Unity, Google Cloud Platform.
+            </p>
+        </section>
+    </div>
+
+
+
+
+
+
+
+    <div id="contact_container" class="container">
+        <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
+        <h1>contact.</h1>
+        <section>
+            <h2>contact me</h2>
+            <p>
+            <form>
+                <input type="text" placeholder="name" required id="name">
+                <input type="email" placeholder="email" required id="email"><br>
+                <textarea placeholder="your message" required rows="5" id="message"></textarea><br>
+                <button class="btn_one" id="sendEmail">send</button>
+            </form>
+
+            </p>
+        </section>
+    </div>
+
     <script src="index.js" type="text/javascript"></script>
     <script src="particles.js"></script>
     <script src="app.js"></script>
@@ -122,6 +168,7 @@
         video.loop = true;
         document.body.appendChild(video);
     </script>
-    
+
 </body>
+
 </html>

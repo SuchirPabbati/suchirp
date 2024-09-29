@@ -58,16 +58,16 @@ body {
     margin-left:-5px;
 }
 #menu {
-    width:100%;
-    text-align:center;
-    margin:6vh 0px;
-    display:none;
+    display: none;
 }
+
 #menu a {
-    margin:0px 6%;
-    font-size:19px;
-    color:#fff;
-    text-decoration:underline;
+    margin: 10px 5px; /* Add vertical margin for spacing */
+    font-size: 19px;
+    color: #fff;
+    text-decoration: underline;
+    width: 100%; /* Make the links take full width */
+    text-align: center; /* Center the text */
 }
 #middle {
     width:100vw;
@@ -98,6 +98,23 @@ body {
     position:fixed;
     left:0;
     bottom:40vh;
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    z-index:4;
+    transition:0.4s ease-in-out;
+    border-radius:0px 0px 100px 100px;
+}
+#experience {
+    width:10vw;
+    height:10vw;
+    text-align:center;
+    font-size:25px;
+    background:transparent;
+    color:#fff;
+    position:fixed;
+    top:0;
+    left:45vw;
     display:flex;
     flex-direction: column;
     justify-content:center;
@@ -141,6 +158,10 @@ body {
     border-radius:100px 100px 0px 0px;
 }
 #about:hover {
+    background:rgba(200, 118, 255,0.9);
+    cursor:pointer;
+}
+#experience:hover {
     background:rgba(200, 118, 255,0.9);
     cursor:pointer;
 }
@@ -322,6 +343,9 @@ body {
     #work {
         display:none;
     }
+    #experience {
+        display:none;
+    }
     #footer {
         text-align:center;
     }
@@ -337,9 +361,69 @@ body {
     }
     .container form textarea {
         width:90%;
+    }/* Hide the menu by default */
+#menu {
+    display: none;
+}
+
+/* Show the menu on smaller screens */
+@media (max-width: 800px) { 
+    #about {
+        display: none;
+    }
+    #contact {
+        display: none;
+    }
+    #work {
+        display: none;
+    }
+    #experience {
+        display: none;
+    }
+    #footer {
+        text-align: center;
+    }
+    #middle {
+        width: 90vw;
+        padding: 0px 5vw;
+    }
+    #middle table {
+        width: 80%;
+    }
+    .container form input {
+        width: 90%;
+    }
+    .container form textarea {
+        width: 90%;
     }
     #menu {
-        display:inline-block;
+        display: flex; /* Change to flex for better alignment */
+        flex-direction: column; /* Vertical alignment */
+        align-items: center; /* Center align the items */
+    }
+    #menu a {
+        margin: 10px 0; /* Add vertical margin for spacing */
+        padding: 15px 20px; /* Add padding around the elements */
+        font-size: 19px;
+        color: #fff;
+        text-decoration: underline;
+        width: 100%; /* Make the links take full width */
+        text-align: center; /* Center the text */
+    }
+}
+    #menu {
+        display: flex; /* Change to flex for better alignment */
+        flex-direction: column; /* Vertical alignment */
+        align-items: center; /* Center align the items */
+    }
+    #menu a {
+        margin: 10px 0; /* Add vertical margin for spacing */
+        padding: 15px 20px; /* Add padding around the elements */
+        font-size: 19px;
+        color: #fff;
+        text-decoration: underline;
+        width: 100%; /* Make the links take full width */
+        text-align: center; /* Center the text */
     }
     #onlywide {
         display:none !important;

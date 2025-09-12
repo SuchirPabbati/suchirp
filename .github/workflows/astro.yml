@@ -209,14 +209,7 @@ jobs:
         run: |
 
 
-          ${{ steps.detect-package-manager.outputs.runner }} astro build \
-
-
-            --site "${{ steps.pages.outputs.origin }}" \
-
-
-            --base "${{ steps.pages.outputs.base_path }}"
-
+          ${{ steps.detect-package-manager.outputs.runner }} astro build 
 
         working-directory: ${{ env.BUILD_PATH }}
 

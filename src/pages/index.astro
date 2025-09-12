@@ -1,0 +1,564 @@
+---
+// Portfolio data
+const portfolioData = {
+  name: "Suchir Pabbati",
+  title: "Computer Science at Rutgers University",
+  bio: "Student with hands-on experience in full-stack development, VR/AR technologies, and AI integration. Passionate about building scalable back end solutions and AI infra.",
+  links: {
+    github: "https://github.com/SuchirPabbati",
+    linkedin: "https://linkedin.com/in/suchir-pabbati",
+    email: "mailto:suchirp14@gmail.com"
+  },
+  experience: [
+    {
+      title: "Software Engineer Intern",
+      company: "Prudential Financial",
+      period: "June 2025 - Aug 2025",
+      description: "Worked on Prudential’s integration technology team, building features to support actuarial data management and internal tooling. Contributed to backend APIs, frontend interfaces, and database workflows, while also helping modernize internal security systems for improved employee access management."
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "Metaloga",
+      period: "June 2024 - Aug 2024",
+      description: "Developed a full-body tracking system for a VR physical therapy application, combining computer vision with real-time motion simulation to expand exercise capabilities. Enhanced platform reliability by improving chatbot accuracy and optimizing real-time data transfer between mobile and VR applications."
+    },
+    {
+      title: "Mentor",
+      company: "Rutgers Mobile App Club",
+      period: "Sept 2024 - Present",
+      description: "Led a student team through the full mobile app development lifecycle, from concept to MVP, earning first place in a club-wide competition. Mentored peers through workshops on backend development, design, and collaboration, fostering technical growth and teamwork."
+    }
+  ],
+  projects: [
+    {
+      name: "WealthBalance",
+      description: "Modern app for portfolio rebalancing and tax-efficient investment",
+      tech: ["React", "Go", "SQLite"],
+      link: "https://github.com/SuchirPabbati/tbd"
+    },
+    {
+      name: "Scarlet Rider",
+      description: "Alexa app providing Rutgers bus routes and arrival times.",
+      tech: ["Node.js", "Alexa SDK", "AWS"],
+      link: "https://github.com/SuchirPabbati/scarlet-ride/"
+    },
+    {
+      name: "BlockTrack Crypto Hub",
+      description: "Android app tracking cryptocurrency prices and market news.",
+      tech: ["Java", "Firebase", "SQLite"],
+      link: "https://github.com/SuchirPabbati/BlockTrack-Crypto-Tracker"
+    }
+  ]
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/porticon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Portfolio of a passionate software developer showcasing projects, experience, and skills." />
+		<meta name="keywords" content="portfolio, software developer, web developer, full stack developer, projects, experience" />
+		<meta name="author" content={portfolioData.name} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={`${portfolioData.name} - Portfolio`} />
+		<meta property="og:description" content="Portfolio of a passionate software developer showcasing projects, experience, and skills." />
+		<meta property="og:site_name" content={`${portfolioData.name} Portfolio`} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={`${portfolioData.name} - Portfolio`} />
+		<meta property="twitter:description" content="Portfolio of a passionate software developer showcasing projects, experience, and skills." />
+		
+		<title>{portfolioData.name} - Portfolio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="portfolio-container">
+			<div class="portfolio-pane">
+				<!-- Overview Section -->
+				<header class="portfolio-header">
+					<h1 class="name">{portfolioData.name}</h1>
+					<p class="title">{portfolioData.title}</p>
+					<p class="bio">{portfolioData.bio}</p>
+					<div class="links">
+						<a href={portfolioData.links.github} target="_blank" rel="noopener noreferrer" class="link">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+							</svg>
+							GitHub
+						</a>
+						<a href={portfolioData.links.linkedin} target="_blank" rel="noopener noreferrer" class="link">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+							</svg>
+							LinkedIn
+						</a>
+						<a href={portfolioData.links.email} class="link">
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+								<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+							</svg>
+							Email
+						</a>
+					</div>
+				</header>
+
+				<!-- Experience Section -->
+				<section class="experience-section">
+					<h2 class="section-title">Experience</h2>
+					<div class="experience-list">
+						{portfolioData.experience.map((job, index) => (
+							<div class="experience-item" data-index={index}>
+								<div class="experience-header" data-index={index}>
+									<div class="experience-info">
+										<h3 class="company">{job.company}</h3>
+										<span class="job-title">{job.title}</span>
+									</div>
+									<div class="experience-meta">
+										<span class="period">{job.period}</span>
+										<button class="expand-btn" data-index={index}>
+											<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+												<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<div class="experience-details" id={`details-${index}`}>
+									<p class="description">{job.description}</p>
+								</div>
+								{index < portfolioData.experience.length - 1 && <div class="experience-separator"></div>}
+							</div>
+						))}
+					</div>
+				</section>
+
+				<!-- Projects Section -->
+				<section class="projects-section">
+					<h2 class="section-title">Projects</h2>
+					<div class="projects-grid">
+						{portfolioData.projects.map((project) => (
+							<div class="project-card">
+								<h3 class="project-name">{project.name}</h3>
+								<p class="project-description">{project.description}</p>
+								<div class="project-tech">
+									{project.tech.map((tech) => (
+										<span class="tech-tag">{tech}</span>
+									))}
+								</div>
+								<a href={project.link} target="_blank" rel="noopener noreferrer" class="project-link">
+									View Project
+								</a>
+							</div>
+						))}
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const experienceHeaders = document.querySelectorAll('.experience-header');
+				
+				experienceHeaders.forEach(header => {
+					header.addEventListener('click', function() {
+						const index = this.getAttribute('data-index');
+						console.log('Toggle function called with index:', index);
+						
+						const details = document.getElementById(`details-${index}`);
+						const btn = this.querySelector('.expand-btn svg');
+						const separator = this.parentElement.querySelector('.experience-separator');
+						
+						console.log('Details element:', details);
+						console.log('Button element:', btn);
+						
+						if (!details) {
+							console.error('Details element not found for index:', index);
+							return;
+						}
+						
+						if (details.classList.contains('expanded')) {
+							details.classList.remove('expanded');
+							if (btn) btn.style.transform = 'rotate(0deg)';
+							if (separator) {
+								separator.style.marginTop = '1rem';
+							}
+							console.log('Collapsed');
+						} else {
+							details.classList.add('expanded');
+							if (btn) btn.style.transform = 'rotate(45deg)';
+							if (separator) {
+								separator.style.marginTop = '1.5rem';
+							}
+							console.log('Expanded');
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
+
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html, body {
+		height: 100%;
+		font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		background: #0a0a0a;
+		color: #ffffff;
+		overflow-x: hidden;
+	}
+
+	body {
+		background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
+		background-attachment: fixed;
+	}
+
+	.portfolio-container {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem;
+		position: relative;
+	}
+
+	.portfolio-container::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+		pointer-events: none;
+	}
+
+	.portfolio-pane {
+		background: #111111;
+		border-radius: 24px;
+		box-shadow: 
+			0 20px 40px rgba(0, 0, 0, 0.4),
+			0 0 0 1px rgba(255, 255, 255, 0.08);
+		padding: 2.5rem;
+		max-width: 500px;
+		width: 100%;
+		position: relative;
+		backdrop-filter: blur(10px);
+	}
+
+	.portfolio-header {
+		text-align: center;
+		margin-bottom: 3.5rem;
+	}
+
+	.name {
+		font-size: 2.2rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+		background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.title {
+		font-size: 1.1rem;
+		color: #9ca3af;
+		font-weight: 400;
+		margin-bottom: 1rem;
+	}
+
+	.bio {
+		font-size: 1rem;
+		color: #d1d5db;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.section-title {
+		font-size: 1.3rem;
+		font-weight: 600;
+		color: #ffffff;
+		margin-bottom: 2rem;
+		text-align: center;
+		position: relative;
+	}
+
+	.section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 40px;
+		height: 2px;
+		background: rgba(255, 255, 255, 0.3);
+		border-radius: 1px;
+	}
+
+	.links {
+		display: flex;
+		justify-content: center;
+		gap: 1.5rem;
+		flex-wrap: wrap;
+	}
+
+	.link {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		color: #9ca3af;
+		text-decoration: none;
+		padding: 0.6rem 1.2rem;
+		border-radius: 8px;
+		transition: all 0.3s ease;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		font-size: 0.9rem;
+	}
+
+	.link:hover {
+		color: #ffffff;
+		background: rgba(255, 255, 255, 0.1);
+		border-color: rgba(255, 255, 255, 0.2);
+		transform: translateY(-2px);
+	}
+
+	/* Experience Section */
+	.experience-section {
+		margin-bottom: 3.5rem;
+	}
+
+	.experience-list {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.experience-item {
+		position: relative;
+	}
+
+	.experience-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem 0;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.experience-header:hover {
+		background: rgba(255, 255, 255, 0.02);
+		border-radius: 8px;
+		padding: 1rem;
+		margin: 0 -1rem;
+	}
+
+	.experience-info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.company {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #ffffff;
+		margin: 0;
+	}
+
+	.job-title {
+		font-size: 0.9rem;
+		font-weight: 400;
+		color: #9ca3af;
+	}
+
+	.experience-meta {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.period {
+		color: #9ca3af;
+		font-size: 0.85rem;
+		font-weight: 400;
+	}
+
+	.expand-btn {
+		background: none;
+		border: none;
+		color: #9ca3af;
+		cursor: pointer;
+		padding: 0.25rem;
+		border-radius: 4px;
+		transition: all 0.3s ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.expand-btn:hover {
+		color: #ffffff;
+		background: rgba(255, 255, 255, 0.1);
+	}
+
+	.expand-btn svg {
+		transition: transform 0.3s ease;
+	}
+
+	.experience-details {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease, padding 0.3s ease;
+		padding: 0 1rem;
+		opacity: 0;
+	}
+
+	.experience-details.expanded {
+		max-height: 300px;
+		padding: 1rem;
+		opacity: 1;
+	}
+
+	.description {
+		color: #d1d5db;
+		line-height: 1.5;
+		font-size: 0.9rem;
+		margin: 0;
+	}
+
+	.experience-separator {
+		height: 1px;
+		background: rgba(255, 255, 255, 0.1);
+		margin: 1rem 0;
+		transition: margin 0.3s ease;
+	}
+
+	/* Projects Section */
+	.projects-section {
+		margin-bottom: 2rem;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.project-card {
+		background: rgba(255, 255, 255, 0.02);
+		padding: 1.2rem;
+		border-radius: 12px;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		transition: all 0.3s ease;
+	}
+
+	.project-card:hover {
+		background: rgba(255, 255, 255, 0.04);
+		border-color: rgba(255, 255, 255, 0.08);
+		transform: translateY(-2px);
+	}
+
+	.project-name {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: #ffffff;
+		margin-bottom: 0.5rem;
+	}
+
+	.project-description {
+		color: #d1d5db;
+		line-height: 1.5;
+		margin-bottom: 0.8rem;
+		font-size: 0.9rem;
+	}
+
+	.project-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-bottom: 0.8rem;
+	}
+
+	.tech-tag {
+		background: rgba(255, 255, 255, 0.05);
+		color: #cccccc;
+		padding: 0.2rem 0.6rem;
+		border-radius: 16px;
+		font-size: 0.75rem;
+		font-weight: 500;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.project-link {
+		display: inline-flex;
+		align-items: center;
+		color: #cccccc;
+		text-decoration: none;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		font-size: 0.9rem;
+	}
+
+	.project-link:hover {
+		color: #ffffff;
+		transform: translateX(4px);
+	}
+
+	/* Responsive Design */
+	@media (max-width: 768px) {
+		.portfolio-container {
+			padding: 1rem;
+		}
+
+		.portfolio-pane {
+			padding: 2rem 1.5rem;
+			max-width: 100%;
+		}
+
+		.name {
+			font-size: 1.8rem;
+		}
+
+		.links {
+			flex-direction: column;
+			align-items: center;
+			gap: 0.8rem;
+		}
+
+		.experience-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		.experience-meta {
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.portfolio-pane {
+			padding: 1.5rem 1rem;
+		}
+
+		.name {
+			font-size: 1.8rem;
+		}
+
+		.title {
+			font-size: 1rem;
+		}
+	}
+</style>

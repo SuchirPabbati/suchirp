@@ -1,10 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
-  site: 'https://suchirpabbati.github.io',
-  base: '/suchirp',
+  site: 'https://suchirpabbati.com',  // <-- your custom domain
+  base: '/',                          // <-- root of the domain
   devToolbar: {
     enabled: false
   }

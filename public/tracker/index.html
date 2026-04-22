@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Habit tracker</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #141619;
+        --panel: #1b1d21;
+        --border: #2a2e35;
+        --text: #e8eaed;
+        --muted: #9aa0a6;
+        --accent: #6c9fff;
+        --done: #3ddc84;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 3rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0 0 0.25rem;
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem 1rem 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .row {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 0.75rem;
+      }
+      input[type="text"] {
+        flex: 1 1 200px;
+        min-width: 0;
+        padding: 0.55rem 0.65rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #121418;
+        color: var(--text);
+        font-size: 1rem;
+      }
+      input[type="text"]:focus {
+        outline: 2px solid var(--accent);
+        outline-offset: 1px;
+      }
+      button {
+        cursor: pointer;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #252830;
+        color: var(--text);
+        font-size: 0.95rem;
+        padding: 0.5rem 0.85rem;
+      }
+      button.primary {
+        background: var(--accent);
+        border-color: transparent;
+        color: #0b1020;
+        font-weight: 600;
+      }
+      button.danger {
+        background: transparent;
+        color: #ff8b8b;
+        border-color: #4a2a2a;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      .date-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 0.35rem;
+      }
+      .habit {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.5rem 0.75rem;
+        padding: 0.75rem 0;
+        border-top: 1px solid var(--border);
+        align-items: start;
+      }
+      .habit:first-of-type {
+        border-top: none;
+        padding-top: 0;
+      }
+      .habit + .habit {
+        margin-top: 0.15rem;
+      }
+      .habit-name {
+        font-weight: 600;
+      }
+      .habit-actions {
+        display: flex;
+        gap: 0.35rem;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+      .checks {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+      }
+      .day {
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-align: center;
+        min-width: 2.25rem;
+      }
+      .toggle {
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #121418;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        user-select: none;
+      }
+      .toggle.on {
+        background: rgba(61, 220, 132, 0.15);
+        border-color: var(--done);
+        color: var(--done);
+        font-weight: 700;
+      }
+      .empty {
+        color: var(--muted);
+        font-size: 0.95rem;
+        padding: 0.25rem 0 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Habit tracker</h1>
+      <p class="sub">Check off each day. Data stays in this browser (local storage).</p>
+
+      <section class="panel" aria-label="Add habit">
+        <form class="row" id="add-form">
+          <input
+            type="text"
+            id="habit-input"
+            name="habit"
+            maxlength="80"
+            placeholder="New habit (e.g. Morning walk)"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="primary">Add</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-label="Your habits">
+        <div id="habits"></div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        var STORAGE_KEY = "habit-tracker-v1";
+        var DAY_COUNT = 7;
+
+        function todayKey() {
+          return new Date().toISOString().slice(0, 10);
+        }
+
+        function lastNDates(n) {
+          var out = [];
+          var d = new Date();
+          for (var i = 0; i < n; i++) {
+            out.push(d.toISOString().slice(0, 10));
+            d.setDate(d.getDate() - 1);
+          }
+          return out.reverse();
+        }
+
+        function load() {
+          try {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return { habits: [] };
+            var data = JSON.parse(raw);
+            if (!data || !Array.isArray(data.habits)) return { habits: [] };
+            return data;
+          } catch (e) {
+            return { habits: [] };
+          }
+        }
+
+        function save(data) {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        function uid() {
+          return "h_" + Math.random().toString(36).slice(2, 10);
+        }
+
+        var state = load();
+        var dates = lastNDates(DAY_COUNT);
+        var elHabits = document.getElementById("habits");
+        var elForm = document.getElementById("add-form");
+        var elInput = document.getElementById("habit-input");
+
+        function habitById(id) {
+          for (var i = 0; i < state.habits.length; i++) {
+            if (state.habits[i].id === id) return state.habits[i];
+          }
+          return null;
+        }
+
+        function render() {
+          if (!state.habits.length) {
+            elHabits.innerHTML = '<p class="empty">No habits yet. Add one above.</p>';
+            return;
+          }
+          var head = dates
+            .map(function (iso) {
+              var parts = iso.split("-");
+              var label = parts[1] + "/" + parts[2];
+              if (iso === todayKey()) label = "Today";
+              return '<div class="day">' + label + "</div>";
+            })
+            .join("");
+
+          var rows = state.habits
+            .map(function (h) {
+              var toggles = dates
+                .map(function (iso) {
+                  var on = h.days && h.days[iso];
+                  return (
+                    '<button type="button" class="toggle' +
+                    (on ? " on" : "") +
+                    '" data-habit="' +
+                    h.id +
+                    '" data-day="' +
+                    iso +
+                    '" aria-pressed="' +
+                    (on ? "true" : "false") +
+                    '" title="' +
+                    iso +
+                    '">' +
+                    (on ? "✓" : "") +
+                    "</button>"
+                  );
+                })
+                .join("");
+
+              return (
+                '<article class="habit" data-id="' +
+                h.id +
+                '">' +
+                '<div class="habit-name"></div>' +
+                '<div class="habit-actions">' +
+                '<button type="button" class="danger" data-remove="' +
+                h.id +
+                '">Remove</button>' +
+                "</div>" +
+                '<div class="checks">' +
+                toggles +
+                "</div>" +
+                "</article>"
+              );
+            })
+            .join("");
+
+          elHabits.innerHTML =
+            '<div class="date-row" aria-hidden="true">' + head + "</div>" + rows;
+
+          state.habits.forEach(function (h) {
+            var art = elHabits.querySelector('[data-id="' + h.id + '"]');
+            if (!art) return;
+            art.querySelector(".habit-name").textContent = h.name;
+          });
+        }
+
+        elForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var name = elInput.value.trim();
+          if (!name) return;
+          state.habits.push({ id: uid(), name: name, days: {} });
+          elInput.value = "";
+          save(state);
+          render();
+          elInput.focus();
+        });
+
+        elHabits.addEventListener("click", function (e) {
+          var t = e.target;
+          if (!(t instanceof HTMLElement)) return;
+          var rid = t.getAttribute("data-remove");
+          if (rid) {
+            state.habits = state.habits.filter(function (h) {
+              return h.id !== rid;
+            });
+            save(state);
+            render();
+            return;
+          }
+          var hid = t.getAttribute("data-habit");
+          var day = t.getAttribute("data-day");
+          if (!hid || !day || !t.classList.contains("toggle")) return;
+          var h = habitById(hid);
+          if (!h) return;
+          if (!h.days) h.days = {};
+          if (h.days[day]) delete h.days[day];
+          else h.days[day] = true;
+          save(state);
+          render();
+        });
+
+        render();
+      })();
+    </script>
+  </body>
+</html>

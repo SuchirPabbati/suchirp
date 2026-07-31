@@ -1,174 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Suchir Pabbati</title>
-    <!-- create meta description-->
-    <meta name="description"
-        content="Suchir Pabbati is a software developer and student studying Computer Science at Rutgers.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css">
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Suchir Pabbati — CS @ Rutgers, SWE">
+  <title>Suchir Pabbati</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&display=block" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div id="loading">
-        <div id="spinner"></div>
-    </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <div id="particles-js"></div>
-    <div id="box">
-        <div class="box1 onlywide animated bounceOutLeft" style="animation-delay:1.7s;"></div>
-        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.8s;"></div>
-        <div class="box2 onlywide animated bounceOutLeft" style="animation-delay:1.9s;"></div>
-        <div class="box2 animated bounceOutRight" style="animation-delay:1.9s;"></div>
-        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.8s;"></div>
-        <div class="box2 onlywide animated bounceOutRight" style="animation-delay:1.7s;"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Home">SP</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
     </div>
-    <a id="about" onclick="showabout()" class="animated fadeIn" style="animation-delay:2.2s;">about</a>
-    <a id="work" onclick="showwork()" class="animated fadeIn" style="animation-delay:2.2s;">projects</a>
-    <a id="contact" onclick="showcontact()" class="animated fadeIn" style="animation-delay:2.2s;">contact</a>
-    <a id="experience" onclick="showexperience()" class="animated fadeIn" style="animation-delay:2.6s;">experience</a>
-    <div id="middle" class="animated slideInDown" style="animation-delay:2.0s;">
-        <h1>suchir pabbati.</h1>
-        <h2>Software Developer / Student / Problem Solver</h2>
-        <div id="menu">
-            <a onclick="showabout()">about</a>
-            <a onclick="showabout()">experience</a>
-            <a onclick="showwork()">projects</a>
-            <a onclick="showcontact()">contact</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-shapes" aria-hidden="true">
+          <span class="hero-shape hero-shape--red rotate-3"></span>
+          <span class="hero-shape hero-shape--yellow rotate-neg2"></span>
+          <span class="hero-shape hero-shape--violet rotate-1"></span>
+          <span class="hero-shape hero-shape--lime rotate-2"></span>
+          <span class="hero-shape hero-shape--dot"></span>
+          <span class="hero-shape hero-shape--mini hero-shape--mini-a rotate-neg1"></span>
+          <span class="hero-shape hero-shape--mini hero-shape--mini-b rotate-2"></span>
         </div>
-        <table>
-            <tr>
-                <td class="animated zoomIn" style="animation-delay:2.2s;"><a class="social"
-                        href="https://github.com/SuchirPabbati" target="_blank"><i class="fab fa-github"></i></a></td>
-                <td class="animated zoomIn" style="animation-delay:2.4s;"><a class="social"
-                        href="https://linkedin.com/in/suchir-pabbati" target="_blank"><i
-                            class="fab fa-linkedin"></i></a></td>
-                <td class="animated zoomIn" style="animation-delay:2.6s;"><a class="social"
-                        href="https://www.instagram.com/suchir_p_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                </td>
-                <!--<td class="animated zoomIn" style="animation-delay:2.8s;"><a class="social" href="https://drive.google.com/file/d/1ATdjNQQcE3QGlvA5KXko62IHM-XePiIP/view?usp=sharing" target="_blank"><img src="resume.png" alt="Resume Icon"></a></td>-->
-                <!--<td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="blog.html" target="_self"><i class="fab fa-medium"></i></a></td>-->
+        <div class="hero-text">
+          <span class="badge rotate-1">Open to New Grad SWE roles · Rutgers '27</span>
+          <h1 class="hero-title">
+            <span class="title-outline">Suchir</span>
+            <span class="title-solid">Pabbati</span>
+          </h1>
+          <p class="hero-sub">Building the layers agents run on.</p>
+        </div>
+      </div>
+    </section>
 
-            </tr>
-        </table>
-    </div>
-    <div id="work_container" class="container">
-        <div onclick="closework()"><i class="fas fa-angle-right"></i></div>
-        <h1>projects.</h1>
-        <section>
-            <h2 id="title-element">CanvasCraft</h2>
-            <p id="text-element">
-                As a college student using the well-known university website Canvas, I noticed several accessibility and
-                usability issues. To address these concerns for myself and fellow students, I initiated a personal
-                project called CanvasCraft. I've already introduced useful features, such as Dark Mode, a Custom Online
-                File Viewer, and a Google OAuth 2.0 integration with the Google Calendar API for importing Canvas
-                assignments. Looking ahead, I intend to enhance Canvas notifications by implementing Firebase Cloud
-                Messaging, ensuring I never miss another assignment.
-            </p>
-            <div id="used">
-                <div id="icon1"><i class="fas fa-circle"></i>&nbsp;HTML5</div>
-                <div id="icon2"><i class="fas fa-circle"></i>&nbsp;CSS3</div>
-                <div id="icon3"> <i class="fas fa-circle"></i>&nbsp;Javascript</div>
-                <div id="icon4"><i class="fas fa-circle"></i>&nbsp;Python</div>
-                <div id="icon5"><i class="fas fa-circle"></i>&nbsp;Google Cloud</div>
+    <section id="about" class="section section--muted">
+      <div class="container">
+        <h2 class="section-title rotate-neg1">About</h2>
+        <div class="about-card">
+          <p>
+            CS student at Rutgers ('27), interested in SWE new grad roles. My recent
+            work spans AI coding agents, LLM evals, and AI-powered dev tools — with
+            a focus on context engineering, agent architectures, and making systems
+            faster and more reliable. I've also shipped products across healthcare,
+            finance, and VR/AR.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section--cream">
+      <div class="container">
+        <h2 class="section-title rotate-1">Experience</h2>
+        <div class="experience-list">
+          <article class="exp-card">
+            <div class="exp-header">
+              <h3 class="exp-role">Software Engineer Intern</h3>
+              <span class="exp-date">May — Aug 2026</span>
             </div>
-            <button class="btn_one" id="aptBTN" onclick="changeTextTwo()">CanvasCraft</button>
-            <button class="btn_two" id="ChaChing" onclick="changeText()">Cha-Ching</button>
-            <button class="btn_two" id="ScarletRider" onclick="changeText()">Scarlet-Rider</button>
-        </section>
+            <p class="exp-company">IBM · Lowell, MA</p>
+            <p class="exp-desc">IBM Bob team (agentic coding IDE). Spearheaded the education version — AI governance, traceability, and LLM eval pipelines. Deploying across 120+ universities worldwide.</p>
+            <p class="exp-tech">Python · Electron</p>
+          </article>
+
+          <article class="exp-card rotate-neg1">
+            <div class="exp-header">
+              <h3 class="exp-role">Software Engineer Intern</h3>
+              <span class="exp-date">May — Aug 2025</span>
+            </div>
+            <p class="exp-company">Prudential Financial · Newark, NJ</p>
+            <p class="exp-desc">Integration tech for actuarial and internal divisions. Optimized existing tooling and built new workflows — cutting processing time and saving significant man-hours.</p>
+            <p class="exp-tech">Spring Boot · Java · SQL · Angular</p>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-header">
+              <h3 class="exp-role">Software Engineer Intern</h3>
+              <span class="exp-date">Jun — Aug 2024</span>
+            </div>
+            <p class="exp-company">Metaloga · Dover, DE</p>
+            <p class="exp-desc">Core VR physical therapy product. Built full-body tracking via external camera + ML — mapping a full avatar to the headset without sensors. Also shipped AR hand tracking for virtual environments.</p>
+            <p class="exp-tech">C# · Unity · Python</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--yellow">
+      <div class="container contact-inner">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-lead">Happy to connect — feel free to reach out anytime.</p>
+        <a href="mailto:suchirp14@gmail.com" class="email-link">suchirp14@gmail.com</a>
+        <div class="social-row">
+          <a href="https://github.com/SuchirPabbati/" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/suchirpabbati" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 4.126 0 2.065 2.065 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Suchir Pabbati</p>
     </div>
-    <div id="about_container" class="container">
-        <div onclick="closeabout()"><i class="fas fa-angle-left"></i></div>
-        <h1>about.</h1>
-        <section>
-            <h2>about me</h2>
-            <p>
-                I'm Suchir Pabbati, a sophmore at Rutgers University New Brunswick. As a Computer Science student, I
-                spend most of my free time learning or trying to solve problems through projects. I like learning new
-                languages and technologies as each one of them implements a different approach to solving a common
-                problem.
-            </p>
-            <p>
-                In addition to what I mentioned above, in my spare time, I love playing basketball, running, solving
-                escape rooms and chess puzzles, hanging out with friends, and cooking.
-            </p>
-        </section>
-        <section>
-            
-        </section>
-    </div>
+  </footer>
 
-    <div id="experience_container" class="container">
-        <div onclick="closeexperience()"><i class="fas fa-angle-up"></i></div>
-        <h1>experience.</h1>
-        <section>
-            <h2>Software Developer Intern</h2>
-            <h3>Metaloga
-            </h3>
-            <h3><i>June 2024 - Aug. 2024</i></h3>
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
 
-            <p>
-                Worked on healthcare solutions using VR/AR/XR technologies. 
-            </p>
-            <p>
-                Developed an end-to-end solution for full body tracking for Meta Quest 3 using Pose Estimation.                
-            </p>
-        </section>
-        <section>
-            <h2>technologies I used</h2>
-            <p>
-                C#, Python, Javascript, PyTorch, Unity, Google Cloud Platform.
-            </p>
-        </section>
-    </div>
+    navLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const target = document.querySelector(link.getAttribute('href'));
 
+        if (!target) {
+          return;
+        }
 
-
-
-
-
-
-    <div id="contact_container" class="container">
-        <div onclick="closecontact()"><i class="fas fa-angle-down"></i></div>
-        <h1>contact.</h1>
-        <section>
-            <h2>contact me</h2>
-            <p>
-            <form>
-                <input type="text" placeholder="name" required id="name">
-                <input type="email" placeholder="email" required id="email"><br>
-                <textarea placeholder="your message" required rows="5" id="message"></textarea><br>
-                <button class="btn_one" id="sendEmail">send</button>
-            </form>
-
-            </p>
-        </section>
-    </div>
-
-    <script src="index.js" type="text/javascript"></script>
-    <script src="particles.js"></script>
-    <script src="app.js"></script>
-    <script>
-        var video = document.createElement("video");
-        video.muted = true;
-        video.poster = "thumbnail.png";
-        video.src = "ptring.mp4";
-        video.autoplay = true;
-        video.loop = true;
-        document.body.appendChild(video);
-    </script>
-
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', `${location.pathname}${location.search}`);
+      });
+    });
+  </script>
 </body>
-
 </html>
